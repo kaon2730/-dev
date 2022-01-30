@@ -1,0 +1,27 @@
+public class Genel {
+
+	public static void main(String[] args) {
+		String[][] dizi = new String[7][7];
+		for(int i=0; i<dizi.length; i++) {
+			for(int j =0; j <dizi[0].length; j++) {
+				if(j==0 || j==6){
+					dizi[i][j]= "*";
+				} else if(i==0 || i==3 || i==6 ) {
+					if(j%2==0) {
+					dizi[i][j] = "*";
+					} else {
+						dizi[i][j]=" ";
+					}	
+				}else {
+					dizi[i][j]=" ";
+				}
+			}	
+		}
+		for(String[] i : dizi) {
+			for(String j : i) {
+				System.out.print(j);
+			}
+			System.out.println();
+		}
+	}
+}
