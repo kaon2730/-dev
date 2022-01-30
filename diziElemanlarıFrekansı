@@ -1,0 +1,29 @@
+public class Genel {
+
+	public static void main(String[] args) {
+		int[] dizi = {10,20,40,30,30,10,10,50,70,40,30,10,60,20};
+		for(int i=0; i<dizi.length; i++) {
+			int count =1;
+			int boyut = dizi.length;
+			for(int j=0; j<boyut; j++) {
+				if(i !=j && dizi[i] == dizi[j]) {
+					count++;
+					dizi=degersilme(dizi, j);
+					j--;
+					boyut = dizi.length;
+				}
+			}
+			System.out.println(dizi[i] + " sayısı " + count + " kere tekrar edildi.");
+		}
+}
+	static int[] degersilme(int[] dizi, int index) {
+		int[] dizi2 = new int[dizi.length-1];
+		int yeniindex=0;
+		for(int i =0; i<dizi.length; i++) {
+			if(i != index) {
+				dizi2[yeniindex++]=dizi[i];
+			}
+		}
+		return dizi2;
+	}
+}
