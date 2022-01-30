@@ -1,0 +1,34 @@
+public class Genel {
+
+	public static void main(String[] args) {
+		int[] dizi = {8,6,4,2,3,7,9,1,12,4,9,0,4,3,8,6,2,12};
+		int[] tekrar = new int[dizi.length];
+		int index=0;
+		int tekraradedi=0;
+		for(int i=0; i<dizi.length;i++) {
+			for(int j=0; j<dizi.length; j++) {
+				if(dizi[i] %2 == 0 && i!=j && dizi[i]==dizi[j]) {
+					if(!ishas(tekrar,dizi[i])) {
+						tekrar[index++]=dizi[i];
+						tekraradedi++;
+					}
+				}
+			}
+		}
+		print(tekrar,tekraradedi);
+	}
+	static boolean ishas(int[] dizi, int deger) {
+		for(int k=0; k<dizi.length; k++) {
+			if(dizi[k]==deger) {
+				return true;
+			}
+		}
+		return false;
+	}
+	static void print(int[] dizi, int b) {
+		for(int a=0; a<b; a++) {
+			System.out.println(dizi[a]);
+		}
+	}
+		
+	}
