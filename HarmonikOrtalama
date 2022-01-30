@@ -1,0 +1,15 @@
+public class Genel {
+
+	public static void main(String[] args) {
+		int[] list = {8,6,12,24};
+		double harmonikOrtalama = 0.0;
+		double harmonikSeri = 0.0;
+		
+		for(int i : list) {
+			
+			harmonikSeri += 1.0/i;
+		}
+		harmonikOrtalama = list.length/harmonikSeri;
+		System.out.println(harmonikOrtalama);
+	}
+}
