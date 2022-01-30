@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Genel {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Dizi boyutunu giriniz");
+		int boyut = scan.nextInt();
+		int[] dizi = new int[boyut];
+		for(int i=0; i<boyut; i++) {
+			System.out.println( "Dizinin " + (i+1) + ". değerini giriniz");
+			int deger = scan.nextInt();
+			dizi[i] = deger;
+		}
+		
+		
+		print(siralama(dizi));
+		
+		
+	}
+	static int[] siralama(int[] dizi) {
+		int[] sira = new int[dizi.length];
+		int boyut= dizi.length;
+		for(int k =0; k<boyut; k++) {
+			sira[k] = enKucukDeger(dizi);
+			dizi=degersilme(dizi, enKucukDegerIndex(dizi));
+			
+		}
+		return sira;
+	}	
+	static int enKucukDeger(int[] dizi) {
+		int a = dizi[0];
+		for(int i=0; i<dizi.length; i++) {
+			if(dizi[i]<a) {
+				a=dizi[i];
+			}
+		}
+		return a;
+	}
+	static int enKucukDegerIndex(int[] dizi) {
+		int a = dizi[0];
+		int index=0;
+		for(int i=0; i<dizi.length; i++) {
+			if(dizi[i]<a) {
+				a=dizi[i];
+				index=i;
+			}
+		}
+		return index;
+	}
+	static int[] degersilme(int[] dizi, int index) {
+		int[] dizi2 = new int[dizi.length-1];
+		int yeniindex=0;
+		for(int i =0; i<dizi.length; i++) {
+			if(i != index) {
+				dizi2[yeniindex++]=dizi[i];
+			}
+		}
+		return dizi2;
+	}
+	static void print(int[] dizi) {
+		for(int i=0; i<dizi.length;i++) {
+			System.out.print(dizi[i] + " ");
+		}
+	}
+}
