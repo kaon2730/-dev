@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Genel {
+
+	public static void main(String[] args) {
+		int[] dizi = {15,12,788,1,-1,-778,2,0};
+		int enYakinKucuk = 0;
+		int enYakinBuyuk =0;
+		boolean kucuk = false;
+		boolean buyuk = false;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Degeri giriniz");
+		int deger = scan.nextInt();
+		for(int i : dizi) {
+			if(i<deger) {
+				enYakinKucuk = i;
+				kucuk = true;
+				break;
+			}
+		}
+		for (int i : dizi) {
+			if(i>deger) {
+				enYakinBuyuk = i;
+				buyuk = true;
+				break;
+			}
+		}
+		if(kucuk) {
+			for( int j : dizi) {
+				if(j<deger) {
+					if((deger-j) < (deger-enYakinKucuk)) {
+						enYakinKucuk=j;
+					}
+				}
+			}
+			System.out.println("En yakin kucuk sayi: " + enYakinKucuk);
+		}
+		else {
+			System.out.println("Girilen degerden daha kucuk sayi yok");
+		}
+		if(buyuk) {
+			for( int j : dizi) {
+				if(j>deger) {
+					if((j-deger) < (enYakinBuyuk-deger)) {
+						enYakinBuyuk=j;
+					}
+				}
+			}
+			System.out.println("En yakin buyuk sayi: " + enYakinBuyuk);
+		}
+		else {
+			System.out.println("Girilen degerden daha buyuk sayi yok");
+		}
+	}
+}
