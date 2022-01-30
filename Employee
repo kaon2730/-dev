@@ -1,0 +1,66 @@
+package employee;
+
+public class Employee {
+		String name;
+		double salary;
+		int workHours;
+		int hireYear;
+		double tax;
+		double bonus;
+		double raiseSalary;
+		
+		
+	Employee(String name, int salary, int workHours, int hireYear){
+		this.name = name;
+		this.salary = salary;
+		this.workHours=workHours;
+		this.hireYear=hireYear;
+	}
+	void tax() {
+		if(this.salary < 1000) {
+			System.out.println("Vergi : 0.00" );
+			this.tax = 0;
+		}
+		else {
+			System.out.println("Vergi : " + this.salary*3/100);
+			this.tax = this.salary*3/100;
+		}
+	}
+	void bonus() {
+		if(this.workHours >40) {
+			System.out.println("Bonus : " + (this.workHours - 40)*30);
+			this.bonus = (this.workHours-40)*30;
+		}
+		else {
+			System.out.println("Bonus : 0.00");
+			this.bonus = 0;
+		}
+	}
+	void raiseSalary() {
+		int calisma = 2021-this.hireYear;
+		if(calisma <10) {
+			System.out.println("Maas Artisi : " + this.salary*5/100);
+			this.raiseSalary = this.salary*5/100;
+		}
+		if(calisma>=10 && calisma <20) {
+			System.out.println("Maas Artisi : " + this.salary/10);
+			this.raiseSalary = this.salary/10;
+		}
+		else {
+			System.out.println("Maas Artisi : " + this.salary*15/100);
+			this.raiseSalary = this.salary*15/100;
+		}
+	}
+	void tooString() {
+		System.out.println("Adi : " + this.name);
+		System.out.println("Maasi : " + this.salary);
+		System.out.println("Calisma Saati : " + this.workHours);
+		System.out.println("Baslangic Yili : " + this.hireYear);
+		tax();
+		bonus();
+		raiseSalary();
+		System.out.println("Vergi ve Bonuslar ile birlikte maas : " + (this.salary + this.bonus - this.tax));
+		System.out.println("Toplam Maas : " + (this.salary + this.raiseSalary));
+		
+	}
+}
