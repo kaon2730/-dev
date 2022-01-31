@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		    	int select = 0;
+		    	int n1=1, n2=1;
+		    	Scanner scan = new Scanner(System.in);
+		    	while(select<1 || select>4) {
+		    	System.out.println("Yapacağınız işlemi seçiniz\n 1-Toplama\n 2-Cikarma\n 3-Carpma\n 4-Bolme");
+		    	select = scan.nextInt();
+		    	}
+		    	System.out.println("İlk sayiyi giriniz");
+	    		n1=scan.nextInt();
+	    		System.out.println("İkinci sayiyi giriniz");
+	    		n2=scan.nextInt();
+		    	
+		    	switch(select) {
+		    	case(1):
+		    		System.out.println("Toplam: " + (n1+n2));
+		    		break;
+		    	case(2): 
+		    		System.out.println("Cikarma: " + (n1-n2));
+		    		break;
+		    	case(3):
+		    		System.out.println("Carpma: "+ (n1*n2));
+		    		break;
+		    	case(4):
+		    		if(n2==0) {
+		    			System.out.println("Sayi 0 a bolunemez");
+		    		} else {
+		    			System.out.println("Bolme: " + (n1/n2));
+		    		}
+		    		
+		    	}
+		    	
+		    }		    	  	
+}
