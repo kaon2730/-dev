@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		    	Scanner scan= new Scanner(System.in);
+		    	System.out.println("Para değerini giriniz");
+		    	int para = scan.nextInt();
+		    	double kdv=0.0;
+		    	if(para>0 && para<1000) {
+		    		kdv = para*18/100;
+		    	}
+		    	if(para >1000) {
+		    		kdv= para*8/100.0;
+		    	}
+		    	System.out.println("KDV'siz fiyat: " + para);
+		    	System.out.println("KDV tutarı: " + kdv);
+		    	System.out.println("KDV'li fiyat: " + (para + kdv));
+		    	
+}
+}
