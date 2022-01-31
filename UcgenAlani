@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		    	Scanner scan= new Scanner(System.in);
+		    	System.out.println("1. kenar uzunluğunu giriniz");
+		    	int a = scan.nextInt();
+		    	System.out.println("2. kenar uzunluğunu giriniz.");
+		    	int b = scan.nextInt();
+		    	System.out.println("3. kenar uzunluğunu giriniz" );
+		    	int c = scan.nextInt();
+		    	double u = (a+ b +c)/2.0;
+		    	double alan =Math.sqrt( u*(u-a)*(u-b)*(u-c));
+		    	if((a+b >c && (a-b<c) && (b+c>a) && (b-c<a) && (a+c>b) && (a-c<b) )) {
+		    		System.out.println("Üçgenin alanı: " + alan);
+		    	} else {
+		    		System.out.println("Belirtilen uzunluklarda üçgen oluşturulamaz");
+		    	}	
+		    }
+}
