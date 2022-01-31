@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		        Scanner scan = new Scanner(System.in);
+		        System.out.println("Matrisin satır sayısını giriniz");
+		        int satir = scan.nextInt();
+		        System.out.println("Matrisin sütün sayısını giriniz");
+		        int sutun = scan.nextInt();
+		        int[][] matris = new int[satir][sutun];
+		        for(int i=0; i<matris.length; i++) {
+		        	for(int k=0; k<matris[0].length; k++) {
+		        		matris[i][k] =degerAlma("Martrisin " + (i+1) + ". satir " + (k+1) + ". sutun değerini giriniz" );
+		        	}
+		        }
+		        int[][] transpoz = new int[sutun][satir];
+		        for(int i=0; i<matris.length; i++) {
+		        	for(int k=0; k<matris[0].length; k++) {
+		        		transpoz[k][i]= matris[i][k];
+		        	}
+		        }
+		        System.out.println("Matrisin transpozu");
+		        diziYazdirma(transpoz);
+		    }
+		    static int degerAlma(String s) {
+		    	Scanner giris = new Scanner(System.in);
+		    	System.out.println(s);
+		    	int a = giris.nextInt();
+		    	return a;
+		    			
+		    }
+		    static void diziYazdirma(int [][] dizi) {
+		    	for(int i=0; i<dizi.length;i++) {
+		    		for(int k=0; k<dizi[0].length; k++) {
+		    			System.out.print(dizi[i][k]  + "  ");
+		    		}
+		    		System.out.println();
+		    	}
+		    }
+}
