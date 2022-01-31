@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		    	Scanner scan= new Scanner(System.in);
+		    	System.out.println("Dairenin yarıçapını giriniz");
+		    	double r = scan.nextDouble();
+		    	int aci=-1;
+		    	while(aci<=0 || aci>360) {
+		    	System.out.println("Daire diliminin merkez açı ölçüsünü giriniz(0-360 arasi)");
+		    	aci = scan.nextInt();
+		    	}
+		    	double pi=3.14;
+		    	double dilimAlani = (pi*r*r*aci)/360;
+		    	System.out.println("Daire diliminin alani: " + dilimAlani);
+		    }		    	
+}
