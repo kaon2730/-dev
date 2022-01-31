@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Anbghjh {
+		    public static void main(String[] args) {
+		    	Scanner scan= new Scanner(System.in);
+		    	double boy=0.0;
+		    	int kilo=0;
+		    	double vucutKitleIndeksi;
+		    	while(boy<=0) {
+		    	System.out.println("lütfen boyunuzu metre cinsinden giriniz");
+		    	boy = scan.nextDouble();
+		    	}
+		    	while(kilo<=0) {
+		    		System.out.println("Lütfen kilonuzu kg cinsinden giriniz");
+		    		kilo = scan.nextInt();
+		    	}
+		    	vucutKitleIndeksi=kilo/(boy*boy);
+		    	System.out.println("Vucut kitle endeksi: " + vucutKitleIndeksi);
+		    }		    	
+}
