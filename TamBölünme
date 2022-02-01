@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Genel {
+
+	public static void main(String[] args) {
+		int deger,count=0,toplam=0;
+		Scanner giris = new Scanner(System.in);
+		System.out.println("Sayiyi giriniz");
+		deger = giris.nextInt();
+		for(int i=1; i<=deger; i++) {
+			if(i%3==0 && i%4==0) {
+				toplam +=i;
+				count++;
+			}
+		}
+		if(count==0) {
+			System.out.println(deger + "'e kadar olan sayılardan hiçbiri 3'e ve 4'e tam bölünmez");
+		} else {
+			System.out.println("3'e ve 4'e tam bölünen sayilarin ortalamasi: " + (double)(toplam)/count);
+		}
+	}
+
+}
