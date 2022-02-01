@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Genel {
+
+	public static void main(String[] args) {
+		int mesafe=0, yas=0, yolculuktipi=0;
+		double fiyat=0.0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Mesafeyi km cinsinden giriniz");
+		mesafe= scan.nextInt();
+		System.out.println("Yasinizi giriniz");
+		yas = scan.nextInt();
+		System.out.println("Yolculuk tipini giriniz(1--Tek Yon, 2--Gidis Donus)");
+		yolculuktipi = scan.nextInt();
+		if(mesafe<=0 || yas<=0 || yolculuktipi>2 || yolculuktipi<1 ) {
+			System.out.println("Hatali veri girdiniz");
+		}else {
+			fiyat = mesafe/10;
+			if(yas<=12) {
+				fiyat /=2;
+			} else if(yas<=24) {
+				fiyat = fiyat*90/100;
+			}
+			if(yas>65) {
+				fiyat = fiyat*70/100;
+			}
+			if(yolculuktipi==2) {
+				fiyat = fiyat*80/100*2;
+				System.out.println("Gidis-Donus toplam tutar: " + fiyat);
+			}
+			if(yolculuktipi==1) {
+			System.out.println("Toplam tutar: " + fiyat);
+			}
+		}
+	}
+
+}
