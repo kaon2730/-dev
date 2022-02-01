@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		    	int a,b,c;
+		    	Scanner giris = new Scanner(System.in);
+		    	System.out.println("1. sayiyi giriniz");
+		    	a= giris.nextInt();
+		    	System.out.println("2. sayiyi giriniz");
+		    	b= giris.nextInt();
+		    	System.out.println("3. sayiyi giriniz");
+		    	c= giris.nextInt();
+		    	if(a<b) {
+		    		if(a<c) {
+		    			System.out.print(a + " ");
+		    			if(b<c) {
+		    				System.out.print(b+" " + c);
+		    			} else {
+		    				System.out.print(c + " " + b);
+		    			}
+		    		} else {
+		    			System.out.println(c + " " + a +" " + b);
+		    		}
+		    	} else {
+		    		if(b<c) {
+		    			System.out.print( b + " ");
+		    			if(a<c) {
+		    				System.out.println(a + " " + c);
+		    			} else {
+		    				System.out.println( c + " " + a);
+		    			}
+		    		}else {
+		    			System.out.println(c+ " " + b +" " + a);
+		    		} 
+		    	}
+		    }		    	  	
+}
