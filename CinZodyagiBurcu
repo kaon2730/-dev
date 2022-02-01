@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Genel {
+
+	public static void main(String[] args) {
+		int tarih;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Dogum tarihinizi giriniz");
+		tarih = scan.nextInt();
+		if(tarih%12==0) {
+			System.out.println("Cin zodyagi burcunuz: Maymun ");
+		}
+		if(tarih%12==1) {
+			System.out.println("Cin zodyagi burcunuz: Horoz ");
+		}
+		if(tarih%12==2) {
+			System.out.println("Cin zodyagi burcunuz: Kopek ");
+		}
+		if(tarih%12==3) {
+			System.out.println("Cin zodyagi burcunuz: Domuz ");
+		}
+		if(tarih%12==4) {
+			System.out.println("Cin zodyagi burcunuz: Fare ");
+		}
+		if(tarih%12==5) {
+			System.out.println("Cin zodyagi burcunuz: Okuz ");
+		}
+		if(tarih%12==6) {
+			System.out.println("Cin zodyagi burcunuz: Kaplan ");
+		}
+		if(tarih%12==7) {
+			System.out.println("Cin zodyagi burcunuz: Tavsan ");
+		}
+		if(tarih%12==8) {
+			System.out.println("Cin zodyagi burcunuz: Ejderha ");
+		}
+		if(tarih%12==9) {
+			System.out.println("Cin zodyagi burcunuz: Yilan ");
+		}
+		if(tarih%12==10) {
+			System.out.println("Cin zodyagi burcunuz: At ");
+		}
+		if(tarih%12==11) {
+			System.out.println("Cin zodyagi burcunuz: Koyun ");
+		}
+	}
+
+}
