@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Genel {
+	public static void main(String[] args) {
+		int enbuyuk= -999999999;
+		int enkucuk = 999999999;
+		int gecici=0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Girilecek sayi adedi");
+        int adet = scan.nextInt();
+        for(int i=0; i<adet; i++) {
+        	System.out.println(i+1 +". sayiyi giriniz");
+        	gecici=scan.nextInt();
+        	if(gecici<enkucuk) {
+        		enkucuk=gecici;
+        	}
+        	if(gecici>enbuyuk) {
+        		enbuyuk=gecici;
+        	}
+        }
+        System.out.println("En buyuk sayi: " + enbuyuk);
+        System.out.println("En kucuk sayi: " + enkucuk);
+        
+    }
+}
