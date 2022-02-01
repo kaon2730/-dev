@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Genel {
+	public static void main(String[] args) {
+		Scanner giris = new Scanner(System.in);
+		System.out.println("Tabani giriniz");
+		int taban = giris.nextInt();
+		System.out.println("Us giriniz");
+		int us = giris.nextInt();
+		System.out.println(usAlma(taban, us));
+		
+   }
+	public static int usAlma(int a,int b) {
+		
+		if(b==0) {
+			return 1;
+		}
+		
+		return a*usAlma(a, b-1);
+	}
+}
