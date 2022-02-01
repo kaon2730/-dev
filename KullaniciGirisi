@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Genel {
+		    public static void main(String[] args) {
+		    	String userName = "Patika";
+		    	String password = "Java101";
+		    	String girilenUserName = "";
+		    	String girilenPassword ="";
+		    	String degisenPassword="";
+		    	int select = 0;
+		    	int i=0;
+		    	while(i<5) {
+		    		Scanner scan = new Scanner(System.in);
+		    		System.out.println("Kullanici adinizi giriniz");
+		    		girilenUserName=scan.nextLine();
+		    		System.out.println("Sifrenizi giriniz");
+		    		girilenPassword = scan.nextLine();
+		    		if(girilenUserName.equals(userName) && girilenPassword.endsWith(password)) {
+		    			System.out.println("Giris basarili");
+		    			i=5;
+		    		} else {
+		    			i++;
+		    			System.out.println((5-i) + " hakkiniz kaldi.");
+		    			if(i==5) {
+		    				System.out.println("Giris hakkiniz doldu.");
+		    				break;
+		    			}
+		    			Scanner giris = new Scanner(System.in);
+		    			System.out.println("Hatali giris yaptiniz. Sifrenizi degistirmek için  1 e basınız");
+		    			select =giris.nextInt();
+		    			switch(select) {
+		    			case(1): 
+		    				do {
+		    					System.out.println("Yeni sifrenizi giriniz");
+		    					degisenPassword = scan.nextLine();
+		    					if(degisenPassword.length()<6) {
+		    						System.out.println("Sifreniz en az 6 karakterden olusmali");
+		    					}
+		    					else if(degisenPassword.equals(girilenPassword) || degisenPassword.equals(password)) {
+		    						System.out.println("Yeni sifreniz eski sifreniz ve hatali girilen sifre ile ayni olamaz");
+		    						
+		    					} else {
+		    						password = degisenPassword;
+		    						System.out.println("Sifreniz başarılı bir şekilde değiştirildi");
+		    						break;
+		    					}
+		    				} while(true);
+		    			}	
+		    		}
+		    	}
+		    	
+		    	
+		    }		    	  	
+}
