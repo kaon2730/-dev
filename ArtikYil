@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Genel {
+
+	public static void main(String[] args) {
+		int tarih;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Yili giriniz");
+		tarih = scan.nextInt();
+		if(tarih%4 == 0) {
+			if(tarih%100 ==0 && tarih%400 !=0) {
+				System.out.println(tarih + " bir artik yil degildir.");
+			}
+			else {
+				System.out.println(tarih + " bir artik yildir.");
+			}
+		} if (tarih%4 != 0) {
+			System.out.println(tarih + " bir artik yil degildir.");
+		}
+	}
+
+}
