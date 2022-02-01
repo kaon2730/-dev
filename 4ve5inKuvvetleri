@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Genel {
+
+	public static void main(String[] args) {
+		int deger;
+		int i=0;
+		Scanner giris = new Scanner(System.in);
+		System.out.println("Sayiyi giriniz");
+		deger = giris.nextInt();
+		do {
+			if(Math.pow(4, i)<deger) {
+				System.out.println("4'un kati: " +Math.pow(4, i));
+				}
+			if(Math.pow(5, i)<deger) {
+				System.out.println("5'in kati: " + Math.pow(5, i));
+			}
+			i++;
+		} while(Math.pow(4, i)<deger);
+	}
+
+}
