@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Genel {
+	public static void main(String[] args) {
+        int ilksayi, ikincisayi;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ilk sayiyi giriniz");
+        ilksayi = scan.nextInt();
+        int i=ilksayi;
+        System.out.println("Ikinci sayiyi giriniz");
+        ikincisayi = scan.nextInt();
+        if(ilksayi !=0 && ikincisayi!=0) {
+        while(i>0) {
+        	if(ilksayi%i==0 && ikincisayi%i==0) {
+        		System.out.println(ilksayi+ " ve " +ikincisayi +"'nin EBOB: "+ i);
+        		i=0;
+        	}
+        	i--;
+        }
+        i=ikincisayi;
+        while(i<ilksayi*ikincisayi) {
+        	if(i%ilksayi==0 && i%ikincisayi==0) {
+        		System.out.println(ilksayi+ " ve " +ikincisayi +"'nin EKOK: "+ i);
+        		i=ilksayi*ikincisayi+1;
+        	}
+        	i++;
+        }
+	} else {
+		System.out.println("0 sayisi girilemez");
+	}
+    }
+}
