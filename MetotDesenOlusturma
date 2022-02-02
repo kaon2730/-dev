@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Genel {
+	    public static void main(String[] args) {
+	        Scanner scan = new Scanner(System.in);
+	        System.out.println("Sayiyi giriniz");
+	        int sayi = scan.nextInt();
+	        int sabitsayi = sayi;
+	        if(sayi>0) {
+	        desenAzaltma(sayi, sabitsayi);
+	        } else {
+	        	System.out.println("Hatali giris yaptiniz");
+	        }
+	        
+	    }
+	    public static int desenAzaltma(int a, int b) {
+	    	System.out.print(a +" ");
+	    	if(a>0) {
+	    		return desenAzaltma(a-5,b);
+	    	} else {
+	    		return desenArtirma(a+5,b);
+	    	}
+	    }
+	    public static int desenArtirma(int a, int b) {
+	    	System.out.print(a + " ");
+	    	if(a==b) {
+	    		return 1;
+	    	} else {
+	    		return desenArtirma(a+5,b);
+	    	}
+	    }
+	}
