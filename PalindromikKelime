@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Genel {
+	    public static void main(String[] args) {
+	        Scanner scan = new Scanner(System.in);
+	        System.out.println("Kelimeyi giriniz");
+	        String kelime = scan.nextLine();
+	        if(palindrom(kelime,0,kelime.length()-1)) {
+	        	System.out.println(kelime + " kelimesi palindromik bir kelimedir");
+	        } else {
+	        	System.out.println(kelime + " kelimesi palindromik bir kelime degildir");
+	        }
+	    }
+	    public static boolean palindrom(String kelime,int a, int b) {
+	    	if(kelime.charAt(a) != kelime.charAt(b)) {
+	    		return false;
+	    	}
+	    	if(a>=b) {
+	    		return true;
+	    	}
+	    	return palindrom(kelime,a+1,b-1);
+	    }
+}
