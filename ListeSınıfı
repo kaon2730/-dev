@@ -1,0 +1,133 @@
+package patika2;
+
+public class MyList <T> {
+	T[] arr ;
+	
+	public MyList() {
+		this.arr = (T[]) new Object[10];
+		}
+	public MyList(int capacity) {
+		this.arr = (T[]) new Object[capacity];
+	}
+	public int size() {
+		int count =0;
+		for(int i=0; i<getCapacity(); i++) {
+			if(this.arr[i] != null) {
+				count++;
+			}
+		}
+		return count;
+	}
+	public int getCapacity() {
+		return this.arr.length;
+	}
+	public void add(T data) {
+		if(size() == getCapacity()) {
+			T[] dizi = (T[]) new Object[getCapacity()];
+			dizi = toArray();
+			this.arr = (T[]) new Object[getCapacity()*2];
+			copyOf(dizi);
+			arr[getCapacity()/2] = data;
+		} else {
+			arr[size()]= data;
+		}
+	}
+	public T[] toArray() {
+		T[] dizi = (T[]) new Object[size()];
+		for(int i=0; i<size(); i++) {
+			dizi[i] = this.arr[i];
+		}
+		return dizi;
+	}
+	public void copyOf(T[] dizi) {
+		for(int i=0; i<dizi.length; i++) {
+			this.arr[i] = dizi[i];
+		}
+	}
+	public T get(int index) {
+		if(index <size()) {
+			return this.arr[index];
+		} else {
+			return null;
+		}
+	}
+	public void remove(int index) {
+		int t=0;
+		if(index >= size()) {
+			System.out.println("Girilen indexte geçerli bir değer yok");
+		} else {
+			for(int i=0, j=0; i<size(); i++ ) {
+				if(i==index) {
+					
+				} else {
+					this.arr[j] = this.arr[i];
+					j++;
+					t=j;
+				}
+			}
+			this.arr[t]=null;
+		}
+	}
+	public void set(int index, T data) {
+		if(index>=size()) {
+			System.out.println("Girilen indexte geçerli bir değer yok");
+		} else {
+			this.arr[index]= data;
+		}
+	}
+	public String toString() {
+		String str = "[";
+		for(int i=0; i<size(); i++) {
+			str += this.arr[i];
+			if(i<size()-1) {
+				str +=",";
+			}
+		}
+		str +="]";
+		return str;
+	}
+	public int indexOf(T data) {
+		int index =-1;
+		for(int i=0; i<size();i++) {
+			if(this.arr[i] == data) {
+				index=i;
+				break;
+			}
+		}
+		return index;
+	}
+	public int lastIndexOf(T data) {
+		int index =-1;
+		for(int i=0; i<size();i++) {
+			if(this.arr[i] == data) {
+				index=i;
+			}
+		}
+		return index;
+	}
+	public boolean isEmpty() {
+		if(size()==0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public void clear() {
+		this.arr = (T[]) new Object[getCapacity()];
+	}
+	public MyList<T> subList(int start, int finish){
+		MyList<T> dizi = new MyList<>(size());
+		for(int i=start; i<=finish; i++) {
+			dizi.add(this.arr[i]);
+		}
+		return dizi;
+	}
+	public boolean contains(T data) {
+		for(int i=0; i<size();i++) {
+			if(this.arr[i]==data) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
